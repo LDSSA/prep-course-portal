@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres
+    ports:
+       - '5432'
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+       - POSTGRES_DB=db
+       - POSTGRES_NAME=postgres
+       - POSTGRES_USER=postgres
+       - POSTGRES_PASSWORD=postgres
+  web:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_NAME=postgres
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_HOST=db
+    depends_on:
+      - db

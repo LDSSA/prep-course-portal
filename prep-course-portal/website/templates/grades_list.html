@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% load query_param_tags %}
+
+{% block title %}Learning Units{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row mb-5 mt-5">
+    <div class="col">
+      <h1>Learning Units</h1>
+    </div>
+  </div>
+
+  <img src="data:image/png;base64,{{ graphic|safe }}" class="img-fluid" alt="Responsive image">
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">learning_unit</th>
+        <th scope="col">exercise_notebook</th>
+        <th scope="col">slackid</th>
+        <th scope="col">score</th>
+        <th scope="col">created</th>
+      </tr>
+    </thead>
+    <tbody>
+     {% for object in object_list %}
+      <tr  id="row-{{ object.code }}">
+        <th><a href="{% add_query_param 'learning_unit' object.learning_unit %}" class="text-dark" title="Filter by learning_unit">{{ object.learning_unit }}</a></th>
+        <th><a href="{% add_query_param 'exercise_notebook' object.exercise_notebook %}" class="text-dark" title="Filter by exercise_notebook">{{ object.exercise_notebook }}</a></th>
+        <th><a href="{% add_query_param 'slackid' object.slackid %}" class="text-dark" title="Filter by slackid">{{ object.slackid }}</a></th>
+        <td>{{ object.score }}</td>
+        <td>{{ object.created }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+{% endblock content %}

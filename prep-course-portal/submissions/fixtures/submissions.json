@@ -1,0 +1,19 @@
+[
+    {
+        "model": "submissions.Submission",
+        "fields": {
+            "created": "John",
+            "slackid": "John",
+            "learning_unit": "John",
+            "score": "John",
+            "metadata": "Lennon"
+        }
+    },
+    {
+        "model": "myapp.person",
+        "fields": {
+            "first_name": "Paul",
+            "last_name": "McCartney"
+        }
+    }
+]
