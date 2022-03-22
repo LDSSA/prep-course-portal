@@ -166,4 +166,5 @@ pd.read_csv('submissions.csv')
 
 ## Docs
 
-* <http://127.0.0.1:8000/api/schema/swagger-ui/>
+* <https://prep-course-portal.ldsacademy.org/api/schema/swagger-ui/>
+    * sometimes it crashes when we open the docs, just wait a few seconds, then go to <https://prep-course-portal.ldsacademy.org/>, then go to <https://prep-course-portal.ldsacademy.org/api/schema/swagger-ui/> again
