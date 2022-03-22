@@ -36,15 +36,8 @@ Example:
 slack_id = "UTS63FC02"
 ```
 
-Then, in the last cell, do the following steps in this order:
-1. Make sure the line `#grade_submit(...)` is a comment (starts with the `#` character)
-1. Save the notebook
-1. Uncomment the line `#grade_submit(...)` by removing the `#` character
-1. Run the last cell of the notebook
-1. You should get an output like `Success {"id":102,"created":"2021-12-24T18:38:50.198035Z","slackid":"UTS63FC02","learning_unit":0,"exercise_notebook":1,"score":20.0}`
-```
-
 **Cell 2** code, Autograded Answer
+
 ```python
 ### BEGIN SOLUTION
 slackid = "UTS63FC02"
@@ -59,6 +52,13 @@ from submit import grade_submit
 assert slackid is not None
 #grade_submit(notebook_name='Exercise notebook.ipynb', learning_unit=0, exercise_notebook=1, slackid=slackid)
 ```
+
+Then, in the last cell, do the following steps in this order:
+1. Make sure the line `#grade_submit(...)` is a comment (starts with the `#` character)
+1. Save the notebook
+1. Uncomment the line `#grade_submit(...)` by removing the `#` character
+1. Run the last cell of the notebook
+1. You should get an output like `Success {"id":102,"created":"2021-12-24T18:38:50.198035Z","slackid":"UTS63FC02","learning_unit":0,"exercise_notebook":1,"score":20.0}`
 
 This serves to collect the student slack ids so that we know who has submitted the LU.
 
