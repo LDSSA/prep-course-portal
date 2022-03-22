@@ -5,13 +5,12 @@
 # For Instructors: grading
 
 ## Grading using Jupyter notebook
-
-1. Copy the `scripts/submit.py` file to the same folder as the Exercise Notebook.
-2. Install the requirements on this repo
+prep-course-portal/prep-course-portal/scripts/requirements.txt
+1. Copy the `prep-course-portal/scripts/submit.py` file to the same folder as the Exercise Notebook.
+2. Install the requirements on `prep-course-portal/scripts/requirements.txt`
 
 ```bash
-cd nb-grades-collector
-pip install -r requirements.txt
+pip install -r prep-course-portal/scripts/requirements.txt
 ```
 
 3. Update the requirements of the LU you're working on
