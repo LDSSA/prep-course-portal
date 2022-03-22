@@ -3,11 +3,9 @@
 # running on ECS.
 #
 
-resource "random_uuid" "test" {}
-
 // Load Balancer
 resource "aws_lb" "_" {
-  name               = "${random_uuid.test.result}-ecs"
+  name               = "${var.app_name}-${var.stage}"
   internal           = false
   load_balancer_type = "application"
   subnets            = var.vpc_subnets

@@ -16,6 +16,11 @@ There is a set manual steps that you need to do before you run the script, and a
         * <https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html>
 1. manually create the s3 bucket that will contain the terraform state os the infrastructure in this project
     * created one called "ldsa-infrastructure"
+1. for first time deployment we need
+    * docker installed on your local machine
+    * region configures in your aws profile (ex: `aws configure set region eu-west-1`)~
+    * configure a region in your ~/.aws/credentials file
+    * boto3 installed in the current avtive virtual environment
 
 Now run `deploy_<stage>.sh`
 
@@ -72,3 +77,32 @@ terraform apply \
     -target module.ecs-service.aws_ecs_task_definition._ \
     -target module.ecs-service.aws_ecs_service._
 ```
+
+# outputs
+
+Outputs:
+
+* aws_db_instance_arn = arn:aws:rds:eu-west-1:036806565123:db:terraform-20220319170353731200000002
+* aws_db_instance_host = terraform-20220319170353731200000002.ctq2kxc7kx1i.eu-west-1.rds.amazonaws.com
+* aws_default_region = eu-west-1
+* aws_ecr_repository_arn = arn:aws:ecr:eu-west-1:036806565123:repository/prep-course-portal_production
+* aws_ecr_repository_name = prep-course-portal_production
+* aws_ecr_repository_url = 036806565123.dkr.ecr.eu-west-1.amazonaws.com/prep-course-portal_production
+* aws_ecs_service_arn = prep-course-portal-production_service
+* aws_ecs_service_name = prep-course-portal-production_service
+* aws_ecs_task_definition_arn = arn:aws:ecs:eu-west-1:036806565123:task-definition/prep-course-portal-production_task:1
+* aws_ecs_task_definition_family = prep-course-portal-production_task
+* aws_lb_arn = arn:aws:elasticloadbalancing:eu-west-1:036806565123:loadbalancer/app/prep-course-portal-production/dc5143dbe4bff464
+* aws_lb_dns_name = prep-course-portal-production-696130803.eu-west-1.elb.amazonaws.com
+* aws_lb_name = prep-course-portal-production
+* aws_route53_record_fqdn = prep-course-portal.ldsacademy.org
+* aws_route53_record_name = prep-course-portal.ldsacademy.org
+* cluster_name = ecs-cluster-prod
+* docker_build_context = ../../prep-course-portal
+* docker_tag = 1.0
+* stage = production
+
+# get shell in container
+
+* install https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html#install-plugin-debian
+* 
