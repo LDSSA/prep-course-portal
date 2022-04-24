@@ -5,62 +5,8 @@
 # For Instructors: grading
 
 ## Grading using Jupyter notebook
-prep-course-portal/prep-course-portal/scripts/requirements.txt
-1. Copy the `prep-course-portal/scripts/submit.py` file to the same folder as the Exercise Notebook.
-2. Install the requirements on `prep-course-portal/scripts/requirements.txt`
 
-```bash
-pip install -r prep-course-portal/scripts/requirements.txt
-```
-
-3. Update the requirements of the LU you're working on
-
-```bash
-cd Week\ 00/SLU00\ -\ Jupyter\ Notebook/
-pip freeze > requirements.txt
-```
-
-4. To enable students to submit a LU you'll need to add 3 cells at the bottom of the notebook, as follows (dont forget to set the learning unit number!):
-
-<img src='assets/submit_work.png' alt='Finder' width="75%" />
-
-**Cell 1** markdown, read-only
-
-```markdown
-# Submit your work!
-
-To submit your work, [get your slack id](https://moshfeu.medium.com/how-to-find-my-member-id-in-slack-workspace-d4bba942e38c) and assign your slack id to a `slack_id` variable in the cell bellow.
-Example:
-
-```python
-slack_id = "UTS63FC02"
-```
-
-**Cell 2** code, Autograded Answer
-
-```python
-### BEGIN SOLUTION
-slackid = "UTS63FC02"
-### END SOLUTION
-# slackid =
-```
-
-**Cell 3** code, Autograded tests, 0 points (dont forget to set the learning unit number!)
-```python
-from submit import grade_submit
-
-assert slackid is not None
-#grade_submit(notebook_name='Exercise notebook.ipynb', learning_unit=0, exercise_notebook=1, slackid=slackid)
-```
-
-Then, in the last cell, do the following steps in this order:
-1. Make sure the line `#grade_submit(...)` is a comment (starts with the `#` character)
-1. Save the notebook
-1. Uncomment the line `#grade_submit(...)` by removing the `#` character
-1. Run the last cell of the notebook
-1. You should get an output like `Success {"id":102,"created":"2021-12-24T18:38:50.198035Z","slackid":"UTS63FC02","learning_unit":0,"exercise_notebook":1,"score":20.0}`
-
-This serves to collect the student slack ids so that we know who has submitted the LU.
+<https://github.com/LDSSA/ds-prep-course-instructors-2022/blob/main/README.md#323-grading-using-jupyter-notebook>
 
 # For maintainers
 
