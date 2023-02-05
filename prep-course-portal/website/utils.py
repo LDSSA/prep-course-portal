@@ -13,19 +13,21 @@ from submissions.models import Submission
 
 def get_submissions() -> pd.DataFrame:
     '''Get all the submissions into a dataframe.'''
-    for sub in Submission.objects.all():
-        sub_dict = {
-            'created': sub.created,
-            'slackid': sub.slackid,
-            'learning_unit': sub.learning_unit,
-            'exercise_notebook': sub.exercise_notebook,
-            'score': sub.score,
-        }
+    if Submission.objects.exists():
+        for sub in Submission.objects.all():
+            sub_dict = {
+                'created': sub.created,
+                'slackid': sub.slackid,
+                'learning_unit': sub.learning_unit,
+                'exercise_notebook': sub.exercise_notebook,
+                'score': sub.score,
+            }
 
-    data = serializers.serialize("json", Submission.objects.all())
-    data = json.loads(data)
-    submissions = [sub['fields'] for sub in data]
-
+        data = serializers.serialize("json", Submission.objects.all())
+        data = json.loads(data)
+        submissions = [sub['fields'] for sub in data]
+    else:
+        submissions = []
     df = pd.DataFrame(submissions)
 
     return df

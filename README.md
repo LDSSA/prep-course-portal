@@ -41,6 +41,13 @@ python manage.py flush
 python manage.py migrate --run-syncdb
 ```
 
+## Building and running with Docker
+
+```bash
+docker buildx build --platform linux/amd64 -t ldssa/prep-course-portal:68aa0ed .
+docker push ldssa/prep-course-portal:68aa0ed
+```
+
 ## Running the server with docker-compose
 
 Running the project
